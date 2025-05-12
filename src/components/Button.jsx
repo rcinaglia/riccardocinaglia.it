@@ -7,9 +7,9 @@ const Button = ({
 }) => {
     return (
         <button
-            className={`bg-white text-black p-2 px-4 rounded-[8px] mt-2 mb-2 flex ${className}`}
+            className={`bg-white text-black p-2 px-4 rounded-[8px] mt-2 mb-2 flex text-center ${className}`}
         >
-            <a href={href}>{children}</a>
+            {children}
         </button>
     );
 };

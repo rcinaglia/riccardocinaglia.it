@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Button from '../components/Button'
 import logo from '../assets/logo.svg'
+import {Link} from 'react-router-dom'
 
 import { useEffect, useState } from 'react'
 
@@ -26,7 +27,7 @@ function Homepage() {
           }`}>
         {/* Overlay animato*/}
         <div
-          className={`absolute inset-0 bg-indigo-500/10 transition-transform duration-1500 ease-out ${isLoaded ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          className={`absolute z-0 inset-0 bg-indigo-500/10 transition-transform duration-1500 ease-out ${isLoaded ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
             }`}
           style={{
             transformOrigin: 'top',
@@ -35,7 +36,7 @@ function Homepage() {
         />
       </div>
       <div className="relative bg-gradient-to-br from-indigo-500/20 to-transparent pt-15 pb-15">
-        <h1 className={`text-[3.5vh] text-center mb-5 h-fit font-mono transition-all duration-1000 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        <h1 className={`text-[3.5vh] text-center mb-5 h-fit font-mono transition-all duration-1000 delay-250 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
           <img src={logo} alt="logo" className='mx-auto w-55' />
         </h1>
@@ -44,10 +45,11 @@ function Homepage() {
           just having fun ://
         </p>
         <Button
-          href='/downloads'
           className={`mx-auto mt-10 transition-all duration-1000 delay-900 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
         >
-          Downloads →
+          <Link to={'/downloads'}>
+            Downloads →
+          </Link>
         </Button>
       </div>
 
